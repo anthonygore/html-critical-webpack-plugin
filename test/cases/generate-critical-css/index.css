@@ -11,5 +11,5 @@
   
 .fade-appear.fade-appear-active {
   opacity: 1;
-  transition: opacity 600ms ease-in; //ms should match the value of transitionAppearTimeout
+  transition: opacity 600ms ease-in; /* ms should match the value of transitionAppearTimeout */
 }

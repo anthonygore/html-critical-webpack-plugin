@@ -4,6 +4,8 @@ A fork of Critical Webpack Plugin.
 
 This is simplified and runs after all files have been emitted so you can use it after Extract Text and HTML Webpack Plugin.
 
+**Note**: [**critical** itself has a dependency on puppeteer](https://github.com/addyosmani/critical/releases/tag/v1.0.0) to run headless Chrome, so make sure your build environment (local, CI, etc) where your running webpack has the necessary operating system packages installed.  See this page for more information on [troubleshooting](https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md) puppeteer.
+
 ### Install
 
 ```

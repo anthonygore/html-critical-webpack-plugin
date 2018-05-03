@@ -19,6 +19,7 @@
   "homepage": "https://github.com/anthonygore/html-critical-webpack-plugin#readme",
   "scripts": {
     "build": "rimraf ./dist && webpack --config ./webpack.config.js",
+    "ci": "webpack --config ./webpack.config.ci.js",
     "test": "mocha ./test/**/*.spec.js"
   },
   "dependencies": {

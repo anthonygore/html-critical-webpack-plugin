@@ -19,7 +19,7 @@
   text-align: center;
   font-weight: 100;
   font-size: 1.4rem;
-  color: $gold;
+  color: yellow;
   width: 100%;
   padding: .55rem;
   white-space: nowrap;
@@ -50,7 +50,7 @@
 }
 
 .card-block a {
-  color: $black;
+  color: #020202;
 }
 
 .card-info {
