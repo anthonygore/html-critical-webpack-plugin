@@ -18,7 +18,7 @@ jobs:
 
       - run:
           name: Install Project Dependencies
-          command: npm install
+          command: npm ci
 
       - run:
           name: Run Tests
