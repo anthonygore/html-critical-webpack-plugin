@@ -1,1 +1,1 @@
-import './index.css';
+import './styles/critical-pregenerated.css';

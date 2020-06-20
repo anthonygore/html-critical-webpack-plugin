@@ -8,7 +8,7 @@
     "url": "git+https://github.com/anthonygore/html-critical-webpack-plugin.git"
   },
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=10.0.0"
   },
   "keywords": [
     "webpack",
@@ -22,26 +22,24 @@
   "homepage": "https://github.com/anthonygore/html-critical-webpack-plugin#readme",
   "scripts": {
     "clean": "rimraf ./dist && rimraf ./test/cases/**/build",
-    "build": "npm run clean && npm run lint && webpack --config ./webpack.config.js",
     "lint": "eslint *.js test/**/*.js",
     "test": "npm run clean && mocha ./test/**/*.spec.js --timeout 5000"
   },
   "dependencies": {
-    "critical": "^1.0.0"
+    "critical": "^2.0.0"
   },
   "files": [
     "README.md",
     "index.js"
   ],
   "devDependencies": {
-    "css-loader": "^0.28.10",
-    "eslint": "^4.19.1",
-    "html-webpack-plugin": "^3.2.0",
-    "jsdom": "^11.6.2",
-    "mini-css-extract-plugin": "^0.4.0",
-    "mocha": "^5.0.1",
-    "rimraf": "^2.6.2",
-    "webpack": "^4.8.2",
-    "webpack-cli": "^2.0.11"
+    "css-loader": "^3.6.0",
+    "eslint": "^7.3.0",
+    "html-webpack-plugin": "^4.3.0",
+    "jsdom": "^16.2.2",
+    "mini-css-extract-plugin": "^0.9.0",
+    "mocha": "^8.0.1",
+    "rimraf": "^3.0.2",
+    "webpack": "^4.43.0"
   }
 }

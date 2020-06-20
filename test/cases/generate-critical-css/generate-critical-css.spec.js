@@ -16,7 +16,7 @@ describe('HtmlCriticalWebpackPlugin Cases: Generate Critical CSS', () => {
       webpack(webpackConfig, () => {
         const indexHtmlString = fs.readFileSync(`${buildDirectory}/index.html`, { encoding: 'utf8' });
 
-        document = (new JSDOM(indexHtmlString)).window.document;
+        document = new JSDOM(indexHtmlString).window.document;
 
         done();
       });
@@ -31,7 +31,7 @@ describe('HtmlCriticalWebpackPlugin Cases: Generate Critical CSS', () => {
 
     it('should generate the expected critical <link> tag', () => {
       const linkTags = document.querySelectorAll('link');
-      
+
       assert.equal(linkTags.length, 2);
       assert.equal(linkTags[0].getAttribute('rel'), 'preload');
       assert.equal(linkTags[0].getAttribute('as'), 'style');
@@ -42,7 +42,7 @@ describe('HtmlCriticalWebpackPlugin Cases: Generate Critical CSS', () => {
 
     it('should generate the expected critical <noscript> tag', () => {
       const noscriptTags = document.querySelectorAll('noscript');
-      
+
       assert.equal(noscriptTags.length, 2);
     });
 
@@ -58,8 +58,8 @@ describe('HtmlCriticalWebpackPlugin Cases: Generate Critical CSS', () => {
       webpack(config, () => {
         const indexHtmlString = fs.readFileSync(`${buildDirectory}/index.html`, { encoding: 'utf8' });
 
-        document = (new JSDOM(indexHtmlString)).window.document;
-        
+        document = new JSDOM(indexHtmlString).window.document;
+
         done();
       });
     });
