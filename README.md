@@ -64,7 +64,7 @@ Now you can run the project's `npm` scripts like usual:
 
 **_Note_**: changes are bi-directional
 
-Learn more about Docker [here](https://docs.docker.com/get-started/) or [configuring Headless Chrome for your own machine](https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md).
+Learn more about Docker [here](https://docs.docker.com/get-started/) or [configuring Headless Chrome for your own machine](https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md).
 
 ### Workflows
 
