@@ -6,10 +6,9 @@ const path = require('path');
 module.exports = {
 
   mode: 'production',
-  
+
   entry: {
-    index: path.resolve(__dirname, 'index.js'),
-    main: path.resolve(__dirname, 'main.js')
+    index: path.resolve(__dirname, 'index.js')
   },
 
   output: {
@@ -19,7 +18,7 @@ module.exports = {
 
   module: {
     rules: [{
-      test: /\.css$/,
+      test: /\.css$/i,
       use: [
         MiniCssExtractPlugin.loader,
         'css-loader'
@@ -28,14 +27,16 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'index.html')
+    }),
 
     new MiniCssExtractPlugin(),
-    
+
     new HtmlWebpackCriticalPlugin({
       base: path.resolve(__dirname, 'build'),
       src: 'index.html',
-      dest: 'index.html',
+      target: 'index.html',
       inline: true
     })
   ]

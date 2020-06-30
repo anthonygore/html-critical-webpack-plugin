@@ -9,20 +9,22 @@ class HtmlCriticalWebpackPlugin {
 
   emit(compilation, callback) {
     const css = Object.keys(compilation.assets)
-      .filter(function (filename) { return /\.css$/.test(filename); })
-      .map(function (filename) { return path.join(compilation.outputOptions.path, filename); });
+      .filter((filename) => filename.endsWith('.css'))
+      .map((filename) => path.join(compilation.outputOptions.path, filename));
 
-    critical.generate(Object.assign({ css }, this.options), (err) => {
-      callback(err);
-    });
+    critical
+      .generate(Object.assign({ css }, this.options))
+      .catch(callback);
   }
 
   apply(compiler) {
-    compiler.hooks.afterEmit.tapAsync('HtmlCriticalWebpackPlugin', (compilation, callback) => {
-      this.emit(compilation, callback);
-    });
+    compiler.hooks.afterEmit.tapAsync(
+      'HtmlCriticalWebpackPlugin',
+      (compilation, callback) => {
+        this.emit(compilation, callback);
+      });
   }
-  
+
 }
 
 module.exports = HtmlCriticalWebpackPlugin;
